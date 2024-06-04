@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Lista de Usuarios
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Usuarios</ion-label>
+    </ion-list-header>
+    <ion-item>
+      <ion-label>Daniela</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label> {{ loggedInUser }} </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-card #card style="width: 160px; --width: 100px;">
+    <ion-card-content>Card</ion-card-content>
+  </ion-card>
+  <ion-button color ='tertiary' (click)="play()">Play</ion-button>
+  <ion-button color ='tertiary' (click)="pause()">Pause</ion-button>
+  <ion-button color ='tertiary' (click)="stop()">Stop</ion-button>
+
+</ion-content>

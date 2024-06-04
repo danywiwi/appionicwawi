@@ -1,0 +1,49 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      PituApp - Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Home</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card color="light">
+    <ion-card-header>
+      <ion-card-title>Bienvenido ʕっ•ᴥ•ʔっ</ion-card-title>
+      <p>Completa tus datos {{ loggedInUser }} </p>
+    </ion-card-header>
+    <ion-card-content>
+      <form #infoForm="ngForm">
+        <ion-item>
+          <ion-label position="floating">Nombre</ion-label>
+          <ion-input type="text" [(ngModel)]="userInfo.nombre" name="nombre" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Apellido</ion-label>
+          <ion-input type="text" [(ngModel)]="userInfo.apellido" name="apellido" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="fixed">Nivel de educación</ion-label>
+          <ion-select [(ngModel)]="userInfo.nivelEducacion" name="nivelEducacion" required>
+            <ion-select-option value="Primaria">Primaria</ion-select-option>
+            <ion-select-option value="Secundaria">Secundaria</ion-select-option>
+            <ion-select-option value="Universitaria">Universitaria</ion-select-option>
+            <ion-select-option value="Postgrado">Postgrado</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label position="fixed">Fecha de nacimiento</ion-label>
+          <ion-datetime presentation="date" displayFormat="MM/DD/YYYY" [(ngModel)]="datetime" name="fechaNacimiento" required></ion-datetime>
+        </ion-item>
+      </form>
+    </ion-card-content>
+    <ion-button expand="full" color="tertiary" class="small" (click)="limpiarCampos()">Limpiar</ion-button>
+    <ion-button expand="full" color="tertiary" class="small" (click)="mostrarInfo()">Mostrar</ion-button>
+  </ion-card>
+</ion-content>
