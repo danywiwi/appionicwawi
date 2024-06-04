@@ -9,6 +9,7 @@ import type { Animation } from '@ionic/angular';
 })
 export class UserlistPage implements OnInit, AfterViewInit {
   loggedInUser: string = '';
+  users: any=[];
 
   @ViewChild(IonCard, { read: ElementRef }) card: ElementRef<HTMLIonCardElement> | null = null;
   private animation: Animation | undefined;  // Inicialización con undefined
@@ -18,6 +19,20 @@ export class UserlistPage implements OnInit, AfterViewInit {
   ngOnInit() {
     // Aquí vamos a obtener el nombre de usuario que se guardó durante el inicio de sesión
     this.loggedInUser = localStorage.getItem('loggedInUser') || 'Usuario';
+
+    this.users.push({
+      name:'Daniela',
+    });
+    this.users.push({
+      name:'Manuel',
+    });
+
+    this.users.push({
+      name:'Marcela',
+    });
+    this.users.push({
+      name:'Marcelo',
+    });
   }
 
   ngAfterViewInit() {
