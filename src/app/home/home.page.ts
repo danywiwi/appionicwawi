@@ -11,8 +11,8 @@ export class HomePage implements OnInit {
   userInfo = {
     nombre: '',
     apellido: '',
-    nivelEducacion: '',
-    fechaNacimiento: ''
+    cargo: '',
+    fecha: ''
   };
   datetime: string = ''; // Añadir esta línea para definir la propiedad datetime
 
@@ -29,8 +29,8 @@ export class HomePage implements OnInit {
     this.userInfo = {
       nombre: '',
       apellido: '',
-      nivelEducacion: '',
-      fechaNacimiento: ''
+      cargo: '',
+      fecha: ''
     };
     this.datetime = ''; // Limpiar el campo datetime también
   }
@@ -38,9 +38,13 @@ export class HomePage implements OnInit {
   async mostrarInfo() {
     const alert = await this.alertController.create({
       header: 'Información del Usuario',
-      message: `Nombre: ${this.userInfo.nombre} Apellido: ${this.userInfo.apellido}`,
+      message: `Nombre: ${this.userInfo.nombre} Apellido: ${this.userInfo.apellido} Cargo: ${this.userInfo.cargo}`,
       buttons: ['OK']
     });
     await alert.present();
+  }
+
+  registroStorage(){
+    localStorage.setItem('token', this.userInfo.nombre)
   }
 }

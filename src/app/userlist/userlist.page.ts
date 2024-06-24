@@ -28,10 +28,15 @@ export class UserlistPage implements OnInit, AfterViewInit {
     });
 
     this.users.push({
+      name:'Carolina',
+    });
+
+    this.users.push({
       name:'Marcela',
     });
+
     this.users.push({
-      name:'Marcelo',
+      name:'Richard',
     });
   }
 

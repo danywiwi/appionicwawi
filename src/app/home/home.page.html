@@ -16,7 +16,7 @@
   <ion-card color="light">
     <ion-card-header>
       <ion-card-title>Bienvenido ʕっ•ᴥ•ʔっ</ion-card-title>
-      <p>Completa tus datos {{ loggedInUser }} </p>
+      <p>Completa los datos {{ loggedInUser }} </p>
     </ion-card-header>
     <ion-card-content>
       <form #infoForm="ngForm">
@@ -29,22 +29,21 @@
           <ion-input type="text" [(ngModel)]="userInfo.apellido" name="apellido" required></ion-input>
         </ion-item>
         <ion-item>
-          <ion-label position="fixed">Nivel de educación</ion-label>
-          <ion-select [(ngModel)]="userInfo.nivelEducacion" name="nivelEducacion" required>
-            <ion-select-option value="Primaria">Primaria</ion-select-option>
-            <ion-select-option value="Secundaria">Secundaria</ion-select-option>
-            <ion-select-option value="Universitaria">Universitaria</ion-select-option>
-            <ion-select-option value="Postgrado">Postgrado</ion-select-option>
+          <ion-label position="fixed">Cargo</ion-label>
+          <ion-select [(ngModel)]="userInfo.cargo" name="cargo" required>
+            <ion-select-option value="Enfermera">Enfermera</ion-select-option>
+            <ion-select-option value="TENS">TENS</ion-select-option>
           </ion-select>
         </ion-item>
         <ion-item>
-          <ion-label position="fixed">Fecha de nacimiento</ion-label>
-          <ion-datetime presentation="date" displayFormat="MM/DD/YYYY" [(ngModel)]="datetime" name="fechaNacimiento" required></ion-datetime>
+          <ion-label position="fixed">Fecha</ion-label>
+          <ion-datetime presentation="date" displayFormat="MM/DD/YYYY" [(ngModel)]="datetime" name="fecha" required></ion-datetime>
         </ion-item>
       </form>
     </ion-card-content>
     <ion-button expand="full" color="tertiary" class="small" (click)="limpiarCampos()">Limpiar</ion-button>
     <ion-button expand="full" color="tertiary" class="small" (click)="mostrarInfo()">Mostrar</ion-button>
+    <ion-button expand="full" color="tertiary" class="small" (click)="registroStorage()">Almacenar</ion-button>
   </ion-card>
   <app-footer></app-footer>
 </ion-content>

@@ -8,7 +8,7 @@ export class AppComponent {
   mostrarMenu: boolean = true; // Variable para controlar la visibilidad del menú
 
   public appPages = [
-    { title: 'Login', url: 'login', icon: 'log-ins' },
+    { title: 'Login', url: 'login', icon: 'log-in' },
     { title: 'Home', url: 'home', icon: 'home' },
     { title: 'Usuarios', url: 'userlist', icon: 'people' },
     { title: 'Acerca de', url: 'about', icon: 'heart' },
