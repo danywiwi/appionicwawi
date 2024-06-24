@@ -1,23 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
 import { IonicModule } from '@ionic/angular';
+import { FormulariosenfermeraPageRoutingModule } from './formulariosenfermera-routing.module';
 
-import { UserlistPageRoutingModule } from './userlist-routing.module';
-
-import { UserlistPage } from './userlist.page';
+import { FormulariosenfermeraPage } from './formulariosenfermera.page';
 import { FootermoduloModule } from '../footermodulo/footermodulo.module';
-// import { FooterComponent } from '../components/footer/footer.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    UserlistPageRoutingModule,
+    FormulariosenfermeraPageRoutingModule,
     FootermoduloModule
   ],
-  declarations: [UserlistPage]
+  declarations: [FormulariosenfermeraPage]
 })
-export class UserlistPageModule {}
+export class FormulariosenfermeraPageModule {}

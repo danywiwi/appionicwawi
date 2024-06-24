@@ -8,9 +8,11 @@ export class AppComponent {
   mostrarMenu: boolean = true; // Variable para controlar la visibilidad del menú
 
   public appPages = [
+    { title: 'Login', url: 'login', icon: 'log-ins' },
     { title: 'Home', url: 'home', icon: 'home' },
     { title: 'Usuarios', url: 'userlist', icon: 'people' },
     { title: 'Acerca de', url: 'about', icon: 'heart' },
+    { title: 'Formularios Enfermera', url: 'formulariosenfermera', icon: 'medkit' },
     /* { title: 'Archived', url: '/folder/archived', icon: 'archive' },
     { title: 'Trash', url: '/folder/trash', icon: 'trash' },
     { title: 'Spam', url: '/folder/spam', icon: 'warning' }, */

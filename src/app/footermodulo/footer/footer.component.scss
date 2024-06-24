@@ -1,0 +1,37 @@
+footer.footer {
+  width: 100%; /* Para que ocupe todo el ancho del contenedor */
+  min-width: 300px; /* Tamaño mínimo en ancho */
+  min-height: 150px; /* Tamaño mínimo en altura */
+  background-color: #8383fb;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.footer-logo {
+  width: 100px; /* Ajusta el tamaño según lo necesites */
+  height: auto; /* Mantiene la proporción de la imagen */
+  margin-right: 10px; /* Espacio entre la imagen y el texto */
+}
+
+.footer-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.footerimg {
+  width: 300px;
+  height: 167px;
+}

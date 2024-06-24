@@ -4,20 +4,18 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { UserlistPageRoutingModule } from './userlist-routing.module';
+import { NotfoundPageRoutingModule } from './notfound-routing.module';
 
-import { UserlistPage } from './userlist.page';
+import { NotfoundPage } from './notfound.page';
 import { FootermoduloModule } from '../footermodulo/footermodulo.module';
-// import { FooterComponent } from '../components/footer/footer.component';
-
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    UserlistPageRoutingModule,
-    FootermoduloModule
+    NotfoundPageRoutingModule,
+    FootermoduloModule,
   ],
-  declarations: [UserlistPage]
+  declarations: [NotfoundPage]
 })
-export class UserlistPageModule {}
+export class NotfoundPageModule {}
