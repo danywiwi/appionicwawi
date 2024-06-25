@@ -4,6 +4,10 @@
       DartyApp - Formularios Enfermera
     </ion-title>
   </ion-toolbar>
+  <!-- Open menu buttom -->
+  <ion-buttons slot="start">
+    <ion-menu-button></ion-menu-button>
+  </ion-buttons>
 </ion-header>
 
 <ion-content [fullscreen]="true">
@@ -35,6 +39,12 @@
           <ion-label position="fixed">Humedad (%)</ion-label>
           <ion-select [(ngModel)]="sensorInfo.humedad" name="humedad" required>
             <ion-select-option *ngFor="let hum of humedades" [value]="hum">{{ hum }} %</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label position="undefined">Bodega</ion-label>
+          <ion-select [(ngModel)]="sensorInfo.bodega" name="descontaminacionFinal" required>
+            <ion-select-option *ngFor="let bodega of bodegas" value="bodega.id">{{bodega.nombre}}</ion-select-option>
           </ion-select>
         </ion-item>
       </form>

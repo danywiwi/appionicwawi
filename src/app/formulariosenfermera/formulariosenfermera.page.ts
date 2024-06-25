@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ApiclienteService } from '../services/apicliente.service';
 
 @Component({
   selector: 'app-formulariosenfermera',
@@ -8,20 +9,36 @@ import { Router } from '@angular/router';
 })
 export class FormulariosenfermeraPage implements OnInit {
   loggedInUser: any = null;
-  sensorInfo = {
+  sensorInfo: any = {
     nombre: '',
     temperatura: '',
     humedad: '',
     descontaminacionInicial: '',
     descontaminacionFinal: '',
-    box: ''
+    box: '',
+    bodega: '',
   };
   temperaturas: number[] = [];
   humedades: number[] = [];
 
-  constructor(private router: Router) { 
+  constructor(private router: Router, private apiclienteService: ApiclienteService) { 
     this.generarListas();
+    this.buscarBodega();
   }
+  bodegas: any[] = [];
+  buscarBodega() {
+    this.apiclienteService.getBodegas().subscribe(
+      (response) => {
+        if (response.status === 200) {
+          this.bodegas = response.data;
+        }
+      },
+      (error) => {
+        console.error('Error al obtener las bodegas', error);
+      }
+    );
+  }
+
 
   ngOnInit() {
     this.loggedInUser = localStorage.getItem('loggedInUser') || 'Usuario';
@@ -58,7 +75,7 @@ export class FormulariosenfermeraPage implements OnInit {
 
   mostrarInfo() {
   console.log(this.sensorInfo);
-  alert(`Bodega Material Esteril: ${this.sensorInfo.nombre}\nTemperatura: ${this.sensorInfo.temperatura} °C\nHumedad: ${this.sensorInfo.humedad}%`);
+  alert(`Bodega Material Esteril: ${this.sensorInfo.nombre}\nTemperatura: ${this.sensorInfo.temperatura} °C\nHumedad: ${this.sensorInfo.humedad}% `);
 }
 
   mostrarInfoDescontaminacion() {
