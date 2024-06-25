@@ -38,6 +38,10 @@ const routes: Routes = [
   {
     path: '**',
     redirectTo: 'notfound'  // Asegúrate de que este nombre coincida con la ruta correcta
+  },
+  {
+    path: 'apirest',
+    loadChildren: () => import('./pages/apirest/apirest.module').then( m => m.ApirestPageModule)
   }
 ];
 
