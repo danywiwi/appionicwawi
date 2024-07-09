@@ -7,6 +7,8 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { Capacitor } from '@capacitor/core';
+import { NotificationService } from './services/notification.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -14,4 +16,34 @@ import { HttpClientModule } from '@angular/common/http';
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+  constructor(private notificationService: NotificationService) {
+    this.configurePlatform();
+  }
+
+  configurePlatform() {
+    const platform = Capacitor.getPlatform();
+    if (platform === 'android') {
+      console.log('Running on Android');
+      this.configureForAndroid();
+    } else if (platform === 'ios') {
+      console.log('Running on iOS');
+      this.configureForIOS();
+    } else if (platform === 'web') {
+      console.log('Running on Web');
+      this.configureForWeb();
+    }
+  }
+
+  configureForAndroid() {
+    this.notificationService.configureForAndroid();
+  }
+
+  configureForIOS() {
+    this.notificationService.configureForIOS();
+  }
+
+  configureForWeb() {
+    this.notificationService.configureForWeb();
+  }
+}

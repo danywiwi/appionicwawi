@@ -19,17 +19,15 @@ describe('AppComponent', () => {
   });
 
   it('should create the app', () => {
-    expect(component).toBeTruthy();
+    expect(component).to.be.ok; // Aserción de Chai equivalente a toBeTruthy
   });
 
   it('should have menu labels', () => {
     fixture.detectChanges();
     const app = fixture.nativeElement;
     const menuItems = app.querySelectorAll('ion-label');
-    
-    expect(menuItems.length).toEqual(component.appPages.length); // Asegúrate de que el número de elementos sea correcto
 
-    
+    expect(menuItems.length).to.equal(component.appPages.length); // Asegúrate de que el número de elementos sea correcto
   });
 
   it('should have urls', () => {
@@ -37,10 +35,10 @@ describe('AppComponent', () => {
     const app = fixture.nativeElement;
     const menuItems = app.querySelectorAll('ion-item');
 
-    expect(menuItems.length).toEqual(component.appPages.length); // Asegúrate de que el número de elementos sea correcto
+    expect(menuItems.length).to.equal(component.appPages.length); // Asegúrate de que el número de elementos sea correcto
 
     component.appPages.forEach((page, index) => {
-      expect(menuItems[index].getAttribute('ng-reflect-router-link')).toEqual(`${page.url}`); // Verifica que las URLs sean correctas
+      expect(menuItems[index].getAttribute('ng-reflect-router-link')).to.equal(`${page.url}`); // Verifica que las URLs sean correctas
     });
   });
 });
