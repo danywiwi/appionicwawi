@@ -14,6 +14,6 @@ describe('ApiclienteService', () => {
   });
 
   it('should be created', () => {
-    expect(service).toBeTruthy();
+    expect(service).to.be.ok; 
   });
 });

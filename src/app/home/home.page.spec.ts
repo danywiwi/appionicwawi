@@ -21,6 +21,6 @@ describe('HomePage', () => {
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(component).to.be.ok; // Aserción de Chai equivalente a toBeTruthy
   });
 });

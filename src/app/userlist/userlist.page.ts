@@ -1,6 +1,6 @@
 import { Component, OnInit, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
-import { NavController, AnimationController, IonCard } from '@ionic/angular';
-import type { Animation } from '@ionic/angular';
+import { NavController, AnimationController, IonCard, IonModal } from '@ionic/angular';
+import type { Animation, } from '@ionic/angular';
 
 @Component({
   selector: 'app-userlist',

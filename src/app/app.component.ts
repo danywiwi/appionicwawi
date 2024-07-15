@@ -7,13 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   public appPages = [
-    { title: 'Inbox', url: 'folder/inbox', icon: 'mail' },
-    { title: 'Outbox', url: 'folder/outbox', icon: 'paper-plane' },
-    { title: 'Login', url: 'login', icon: 'log-in' },
+    { title: 'Salir', url: 'login', icon: 'log-in' },
     { title: 'Home', url: 'home', icon: 'home' },
-    { title: 'Userlist', url: 'userlist', icon: 'list' },
-    { title: 'About', url: 'about', icon: 'information-circle' },
-    { title: 'Formulariosenfermera', url: 'formulariosenfermera', icon: 'document' },
+    { title: 'Lista de Usuarios', url: 'userlist', icon: 'list' },
+    { title: 'Acerca de', url: 'about', icon: 'information-circle' },
+    { title: 'Formularios de enfermera', url: 'formulariosenfermera', icon: 'medkit' },
     // Añade aquí todas las páginas necesarias
   ];
 
