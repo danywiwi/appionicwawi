@@ -68,7 +68,8 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "protractor": "^7.0.0",
-    "typescript": "~5.2.2"
+    "typescript": "~5.2.2",
+    "cypress": "latest"
   },
   "description": "An Ionic project"
 }
